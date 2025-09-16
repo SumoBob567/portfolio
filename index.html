@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Test Portfolio</title>
   <style>
+    html {
+      scroll-behavior: smooth;
+			scroll-padding-top: 150px;
+    }
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -41,9 +45,66 @@
     }
     main {
       padding: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
     }
     section {
       margin-top: 3rem;
+    }
+
+    .projects-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .project-card {
+		  display: flex;
+  		flex-direction: row;
+  		background: #1a1a1a;
+  		border: 1px solid #333;
+  		border-radius: 12px;
+  		padding: 1rem;
+  		align-items: center;
+  		gap: 1.5rem;
+		}
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: #6d28d9;
+    }
+    .project-card img,
+		.project-card video {
+  		width: 300px;
+  		height: auto;
+  		border-radius: 8px;
+  		flex-shrink: 0;
+		}
+		.project-info {
+  		text-align: left;
+  		flex: 1;
+		}
+    .project-card h3 {
+      margin: 0.5rem 0;
+      color: #a78bfa;
+    }
+    .project-card p {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+    .project-card a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: #6d28d9;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .project-card a:hover {
+      text-decoration: underline;
     }
     footer {
       margin-top: 3rem;
@@ -59,39 +120,66 @@
     <p>2nd Year Computer Science Student at the University of Cambridge</p>
     <nav>
       <a href="#about">About</a>
+			<a href="#education">Education</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
-      <a href="#education">Education</a>
     </nav>
   </header>
 
   <main>
     <section id="about">
       <h2>About Me</h2>
-      <p>placeholder</p>
+      <p>I’m a 2nd-year Computer Science student with a passion for building interactive simulations and tools. I enjoy tackling complex and enjoyable problems through programming, such as developing a 3D physics engine. I’m always exploring new technologies and challenging myself to build projects that combine creativity with technical rigor.</p>
     </section>
 
     <section id="education">
       <h2>Education</h2>
-      <p>Harris Westminster Sixth Form - A*A*A*A in Maths, Further Maths, Phyisics and Chemistry</p>
-      <p>University of Cambridge - 2-1 in first year</p>
+      <p>Harris Westminster Sixth Form - A*A*A*A in Maths, Further Maths, Physics and Chemistry</p>
+      <p>Currently studying Computer Science at the University of Cambridge</p>
     </section>
 
     <section id="projects">
       <h2>Projects</h2>
-      <ul style="list-style: none; padding: 0;">
-        <li><a href="#">Maze Generator</a></li>
-        <li><a href="#">3D Physics Engine + Renderer</a></li>
-        <li><a href="#">Resume/CV Analyser</a></li>
-      </ul>
+      <div class="projects-container">
+    
+        <div class="project-card">
+          <img src="maze.png" alt="Maze Generator preview">
+          <div class="project-info">
+            <h3>Maze Generator</h3>
+            <p>Generates random mazes using depth-first search and backtracking. Built in Python.</p>
+            <a href="https://replit.com/@sumantbobbili/Maze-Creation">View on Replit</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <video autoplay loop muted playsinline>
+            <source src="physics-demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="project-info">
+            <h3>3D Physics Engine + Renderer</h3>
+            <p>A simple 3D physics engine with custom rendering pipeline. Focused on collisions and shading.</p>
+            <a href="#">View on GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="resume.png" alt="Resume Analyser preview">
+          <div class="project-info">
+            <h3>Resume/CV Analyser</h3>
+            <p>Tool that parses resumes, extracts skills, and matches against job descriptions.</p>
+            <a href="#">View on GitHub</a>
+          </div>
+        </div>
+
+      </div>
     </section>
 
     <section id="contact">
       <h2>Contact Me</h2>
       <p>Github: <a href="https://github.com/SumoBob567">github.com/SumoBob567</a></p>
-      <p>Email: <a href="mailto:sumantbobbili@yahoo.co.uk">sumantbobbili@yahoo.co.uk</a></p>
+      <p>Email: <a href="mailto:mail@sumant.uk">mail@sumant.uk</a></p>
     </section>
   </main>
-
 </body>
 </html>
