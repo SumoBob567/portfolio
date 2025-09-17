@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sumant Bobbili | Portfolio</title>
+  <meta name="description" content="Sumant Bobbili | Cambridge Computer Science student. Portfolio featuring software projects: 3D physics engine, maze generator, and CV analyzer. Skilled in Python, Java, and problem-solving.">
   <style>
     html {
       scroll-behavior: smooth;
@@ -111,6 +112,23 @@
       font-size: 0.9rem;
       color: #888;
       padding-bottom: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .project-card {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .project-card img,
+      .project-card video {
+        width: 100%;
+        height: auto;
+      }
+
+      .project-info {
+        text-align: center;
+      }
     }
   </style>
 </head>
